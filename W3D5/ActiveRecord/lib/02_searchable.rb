@@ -10,3 +10,12 @@ end
 class SQLObject
   # Mixin Searchable here...
 end
+
+
+haskell_cats = Cat.where(:name => "Haskell", :color => "calico")
+# SELECT
+#   *
+# FROM
+#   cats
+# WHERE
+#   name = ? AND color = ?
