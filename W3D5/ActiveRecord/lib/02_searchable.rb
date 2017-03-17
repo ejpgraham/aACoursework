@@ -2,6 +2,7 @@ require_relative 'db_connection'
 require_relative '01_sql_object'
 
 module Searchable
+  # QUESTION: Here, why are we using a module? We are assuming that the target class has the parse_all and table_name methods
   def where(params)
     questionized_keys =  params.keys.map{|name|name.to_s + "= ?"}.join(" AND ")
     results = DBConnection.execute(<<-SQL, params.values)
