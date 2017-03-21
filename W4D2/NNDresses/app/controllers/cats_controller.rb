@@ -9,4 +9,13 @@ class CatsController < ApplicationController
 
     render :show
   end
+
+  def new
+    render :new
+  end
+
+  def create
+    
+  end
+
 end
