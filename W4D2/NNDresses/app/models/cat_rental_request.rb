@@ -26,6 +26,22 @@ class CatRentalRequest < ActiveRecord::Base
     primary_key: :id,
     foreign_key: :cat_id
 
+  def approve!
+    ActiveRecord::Base.transaction do
+      self.status = "APPROVED"
+      self.save!
+      overlapping_requests.each(&:deny!)
+    end
+  end
+
+  def deny!
+    ActiveRecord::Base.transaction do
+
+      self.status = "DENIED"
+      self.save!
+    end
+  end
+
   private
   def overlapping_requests
     result = []
@@ -40,11 +56,13 @@ class CatRentalRequest < ActiveRecord::Base
     result = []
     overlapping_requests.each do |request|
       if request.status == "APPROVED"
+        puts request.id
+        sleep 3
         errors[:base] << "Cannot overlap approved request"
       end
     end
     result
   end
 
-  # cr = CatRentalRequest.new(cat_id: 7, start_date: '2018/01/02', end_date: '2018/01/06')
+  cr = CatRentalRequest.new(cat_id: 14, start_date: '2018/01/03', end_date: '2018/01/06')
 end
