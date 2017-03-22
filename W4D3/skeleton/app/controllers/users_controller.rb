@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :logged_in
 
   def new
     render :new
@@ -8,11 +9,13 @@ class UsersController < ApplicationController
     user = User.new(user_params)
 
       if user.save!
+        log_in(user)
         redirect_to cats_url
       else
         render :new
       end
   end
+
 
 
 
