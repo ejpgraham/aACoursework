@@ -1,4 +1,5 @@
 class BandsController < ApplicationController
+  before_action :require_login
 
   def index
     @bands = Band.all
@@ -20,6 +21,12 @@ class BandsController < ApplicationController
 
   def show
     @band = Band.find(params[:id])
+  end
+
+  def destroy
+    band = Band.find(params[:id])
+    band.destroy
+    redirect_to bands_url
   end
 
   private

@@ -1,0 +1,17 @@
+<form action="<%= track_url(@track) %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete">
+</form>
+
+<h1> <%= @track.name %> </h1>
+
+<table>
+  <tr>
+    <td>Type: <%= @track.track_type %></td>
+  </tr>
+    <tr>
+      <td>Lyrics: <%= @track.lyrics %></td>
+    </tr>
+</table>
+<a href="<%=album_url(@track.album_id)=%>" ><button type="button">Back to Album</button></a>

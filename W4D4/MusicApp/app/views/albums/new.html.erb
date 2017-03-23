@@ -3,7 +3,9 @@
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <label for="band">Band:</label>
   <select id="band" name= "album[band_id]">
+    <% if @bands.length > 1 %>
     <option disable selected>--Select--</option>
+    <% end %>
     <% @bands.each do |band| %>
       <option value="<%= band.id %>"> <%= band.name %></option>
     <% end %>
