@@ -12,6 +12,7 @@
     <h1> My Music App </h1>
     <% if logged_in? %>
       <p> Welcome, <%= current_user.email %>
+      <img src=" <%= current_user.picture.html_safe %>" width = "5%"/>  
       <form action="<%= session_url %>" method="post">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
         <input type="hidden" name="_method" value="DELETE">

@@ -10,7 +10,10 @@ ActiveRecord::Base.transaction do
 Band.destroy_all
 Album.destroy_all
 Track.destroy_all
+User.destroy_all
 
+u = User.create(email: "snorlax@pokemon.com", password: "sleeping", picture: "https://pldh.net/media/dreamworld/143.png")
+u2 = User.create(email: "staryu@pokemon.com", password: "impointy", picture: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwixoM6Wz-3SAhUEwYMKHVYlDnQQjRwIBw&url=http%3A%2F%2Fleonhartopedia.wikia.com%2Fwiki%2FStaryu&psig=AFQjCNHta3BN1vyzGp01Ks2QmAta9x525g&ust=1490392178455125")
 b1 = Band.create(name: "Maroon 5")
 a1 = Album.create(name: "We Are Marooned", album_type: "Live", band_id: b1.id)
 a2 = Album.create(name: "Too Many of Us", album_type: "Studio", band_id: b1.id)
