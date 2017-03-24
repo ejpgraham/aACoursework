@@ -1,0 +1,22 @@
+<h1>Whats up</h1>
+
+<% if flash[:errors] %>
+<p> <%= flash[:errors].join(",") %></p>
+<% end %>
+<form action="<%= users_url %>" method="post">
+  <label for="username">Username:</label>
+  <input
+    id="username"
+    placeholder="Username"
+    type="text"
+    name="user[username]">
+
+  <label for="password">Password:</label>
+  <input
+    id="password"
+    type="password"
+    name="user[password]">
+  <input
+    type="submit"
+    value="submit">
+</form>
