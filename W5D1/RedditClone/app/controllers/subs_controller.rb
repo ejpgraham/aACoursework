@@ -51,6 +51,6 @@ class SubsController < ApplicationController
 
   def ensure_current_user_is_moderator
     @sub = Sub.find(params[:id])
-    redirect_to subs_url, status: 401
+    redirect_to subs_url, status: 401 unless current_user.id == @sub.moderator_id
   end
 end

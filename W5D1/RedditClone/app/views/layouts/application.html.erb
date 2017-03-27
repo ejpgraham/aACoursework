@@ -14,7 +14,7 @@
         <%= error %>
       <% end %>
     <% end %>
-    
+
     <% if current_user %>
       <%= current_user.username %>
       <form action="<%= session_url %>" method="post">
@@ -22,6 +22,10 @@
         <%= auth_token %>
         <input type="submit" value="Log Out">
       </form>
+
+      <a href="<%= subs_url %>">All Subs</a>
+      <br>
+      <a href="<%= new_sub_url %>">Make a New Sub</a>
     <% end %>
 
     <%= yield %>
