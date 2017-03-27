@@ -17,9 +17,8 @@
 
 <br><br><br>
 <a href="<%= new_post_comment_url(@post.id) %>">Add a Comment</a>
-
 <ul>
-<% @post.comments.where(parent_comment_id: nil).each do |comment| %>
+<% @all_comments[nil].each do |comment| %>
     <li><%= render "child_comment", comment: comment %></li>
 <% end %>
 </ul>

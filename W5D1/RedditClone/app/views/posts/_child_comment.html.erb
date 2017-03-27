@@ -1,7 +1,7 @@
-<a href="<%= comment_url(comment.id) %>"><%= comment.content %></a>
+<a href="<%= comment_url(comment.id) %>"><%= comment.content %></a> by <%= comment.author.username %> at <%= comment.created_at %>
 
 <ul>
-<% comment.child_comments.each do |child_comment| %>
+<% @all_comments[comment.id].each do |child_comment| %>
   <li><%= render "child_comment", comment: child_comment %></li>
 <% end %>
 </ul>
