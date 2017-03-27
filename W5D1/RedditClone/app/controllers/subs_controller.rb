@@ -20,7 +20,7 @@ class SubsController < ApplicationController
   end
 
   def show
-    @sub = Sub.find(parms[:id])
+    @sub = Sub.find(params[:id])
     render :show
   end
 
@@ -50,7 +50,7 @@ class SubsController < ApplicationController
   end
 
   def ensure_current_user_is_moderator
-    @sub = Sub.find(parms[:id])
+    @sub = Sub.find(params[:id])
     redirect_to subs_url, status: 401
   end
 end
