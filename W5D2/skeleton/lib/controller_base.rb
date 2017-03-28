@@ -35,7 +35,7 @@ class ControllerBase
     @res['content-type'] = content_type
     @res.write(content)
     @already_built_response = true
-     # QUESTION: Why do we have to store the session data here
+     # QUESTION: Why do we have to store the session data here? Every time we manipulate the session object it is modified "locally" it is not sent back to the client side. When something is rendered or we redirect, that is an indication that our controller is done and we can now send up the cookie
     session.store_session(res)
   end
 
@@ -55,5 +55,11 @@ class ControllerBase
 
   # use this with the router to call action_name (:index, :show, :create...)
   def invoke_action(name)
+    self.send(name)
   end
+end
+
+def create
+  login(@user)
+  redirect_to link_url
 end
