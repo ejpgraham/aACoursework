@@ -27,11 +27,9 @@ console.log([5,4,3,2,1].bubbleSort());
 function substrings(input){
   let results = [];
   for (let i = 0; i < input.length; i++) {
-    for (var j = i + 1; i < input.length; i++) {
+    for (var j = i + 1; j < input.length + 1; j++) {
       let substring = input.slice(i,j);
-        if (!(results.includes(substring))){
           results.push(substring);
-        }
     }
   }
   return results;
