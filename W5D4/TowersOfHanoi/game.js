@@ -1,20 +1,9 @@
-const readline = require('readline');
-
-const reader = readline.createInterface({
-  // it's okay if this part is magic; it just says that we want to
-  // 1. output the prompt to the standard output (console)
-  // 2. read input from the standard input (again, console)
-
-  input: process.stdin,
-  output: process.stdout
-});
-
 class Game{
   constructor(){
     this.stacks = [[1,2,3],[],[]];
   }
 
-  promptMove(callback){
+  promptMove(reader, callback){
     this.print();
     reader.question("Please pass starting tower and ending tower: idx1,idx2 ", function (answer){
         let temp = answer.split(",");
@@ -61,8 +50,8 @@ class Game{
     return false;
   }
 
-  run(completionCallback){
-    this.promptMove( (start,end) => {
+  run(reader, completionCallback){
+    this.promptMove(reader, (start,end) => {
 
       if(this.move(start,end) === false){
         console.log("Invalid Move");
@@ -71,14 +60,10 @@ class Game{
       if(this.isWon()){
         completionCallback();
       }else{
-        this.run(completionCallback);
+        this.run(reader, completionCallback);
       }
     });
   }
 }
 
-var g = new Game();
-g.run(function() {
-  console.log("You win");
-  reader.close();
-  });
+module.exports = Game;
