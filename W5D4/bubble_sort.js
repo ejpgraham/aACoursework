@@ -17,26 +17,51 @@ function askIfGreaterThan(el1, el2, callback){
     }else {
       callback(false);
     }
-    reader.close();
   });
 }
+//
+// function test(ans){
+//   console.log(ans);
+// }
 
-function test(ans){
-  console.log(ans);
-}
-
-askIfGreaterThan(4,5,test);
+// askIfGreaterThan(4,5,test);
 
 
 function innerBubbleSortLoop(arr, i, madeAnySwaps, outerBubbleSortLoop){
-  if (i < arr.length - 1){
-    askIfGreaterThan(arr[i], arr[i+1],function(isGreaterThan){
-      if(isGreaterThan){
-        let temp = arr[i+1];
-        arr[i+1] = arr[i];
-        arr[i] = temp;
-        madeAnySwaps = true;
-      }
-    });
+  if (i === arr.length - 1) {
+    outerBubbleSortLoop(madeAnySwaps); } else {
+      askIfGreaterThan(arr[i], arr[i+1],function(isGreaterThan){
+        if(isGreaterThan){
+          let temp = arr[i+1];
+          arr[i+1] = arr[i];
+          arr[i] = temp;
+          madeAnySwaps = true;
+        }
+        innerBubbleSortLoop(arr, i + 1, madeAnySwaps, outerBubbleSortLoop);
+      });
+    }
   }
+
+
+// innerBubbleSortLoop([5,4,3,2,1], 0, false, function() {
+//   console.log("in outer bubble sort");
+// });
+
+function absurdBubbleSort(arr, sortCompletionCallback){
+  function outerBubbleSortLoop(madeAnySwaps){
+    if (madeAnySwaps){
+      madeAnySwaps = false;
+      innerBubbleSortLoop(arr, 0, madeAnySwaps, outerBubbleSortLoop);
+    }else{
+      sortCompletionCallback(arr);
+    }
+  }
+
+  outerBubbleSortLoop(true);
 }
+
+
+absurdBubbleSort([3, 2, 1], function (arr) {
+  console.log("Sorted array: " + JSON.stringify(arr));
+  reader.close();
+});
