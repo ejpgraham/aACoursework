@@ -1,0 +1,16 @@
+<form action="<%= band_url(@band) %>" method="post">
+  <input type="hidden" name="authenticity_token" value=" <%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete">
+</form>
+
+<h2><%= @band.name %></h2>
+<% if @band.albums %>
+  <ul>
+  <% @band.albums.each do |album| %>
+    <li><a href="<%= album_url(album)%>"><%= album.name %></a></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<a href= "<%=new_band_album_url(@band.id)%>"><button type="button">Add an Album</button></a>

@@ -1,0 +1,24 @@
+<h1><%= @post.title %> by <%= @post.author.username %></h1>
+<br>
+<b>Subs:</b>
+<br>
+<% @post.subs.each do |sub1| %>
+  <%= sub1.title %><br>
+<% end %>
+<br>
+<b>URL:</b> <%= @post.url %>
+<br>
+<b>Content:</b> <%= @post.content %>
+<br><br>
+
+<% if current_user == @post.author %>
+<a href="<%= edit_post_url(@post.id) %>">Edit Post</a>
+<% end %>
+
+<br><br><br>
+<a href="<%= new_post_comment_url(@post.id) %>">Add a Comment</a>
+<ul>
+<% @all_comments[nil].each do |comment| %>
+    <li><%= render "child_comment", comment: comment %></li>
+<% end %>
+</ul>

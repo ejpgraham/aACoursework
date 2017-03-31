@@ -1,0 +1,20 @@
+<br>
+<a href="<%= subs_url %>"><button type="button">All Subs</button></a>
+
+<h1><%= @sub.title %></h1>
+By:<%= @sub.moderator.username %>
+<br>
+<%= @sub.description %>
+<br>
+<% if current_user.id == @sub.moderator_id %>
+  <a href="<%= edit_sub_url(@sub) %>"><button type="button">Edit Sub</button></a>
+<% end %>
+<br><br>
+<a href="<%= new_post_url %>"><button type="button">+ Post</button></a>
+
+<br><br>
+<ul>
+<% @sub.posts.each do |post| %>
+  <li><a href="<%= post_url(post.id) %>"><%= post.title %></a></li>
+<% end %>
+</ul>
