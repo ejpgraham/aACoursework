@@ -15,26 +15,23 @@ function sumREST(...rest) {
 
 
 
-//mybind
+//mybind in ES6
 Function.prototype.myBind = function (context, ...args) {
-  return () => this.apply(context, args);
+  return (...args2) => this.apply(context, args.concat(args2));
 };
 
+//mybind in ES5
 Function.prototype.myBindArgs = function (context) {
   const args = Array.prototype.slice.call(arguments, 1);
-  return () => this.apply(context, args);
+  const that = this;
+  return function(){
+    const args2 = Array.prototype.slice.call(arguments);
+    const innerArgs = args.concat(args2);
+    that.apply(context, innerArgs);
+  };
 };
 
-class Dog {
-  construct(name) {
-    this.name = name;
-  }
 
-  sayHi(something) {
-
-    return `hi I'm ${this.name}, you're ${something}`;
-  }
-}
 
 //curriedSum
 function curriedSum(numArgs){
