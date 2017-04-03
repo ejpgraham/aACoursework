@@ -1,0 +1,58 @@
+ul.board {
+  margin: 0 auto;
+  background-color: grey;
+  width: 300px;
+  height: 300px;
+  border: 5px solid antiquewhite;
+  padding: 0;
+}
+
+p {
+  vertical-align: middle;
+  text-align: center;
+  background-color: white;
+  width: 90px;
+  height: 90px;
+  padding: 0;
+  margin: 0;
+}
+
+.won{
+  background-color: lightblue;
+  color: white;
+}
+
+.lost{
+  background-color: lightpink;
+  color: black;
+}
+
+li.tile {
+  float: left;
+  width: 100px;
+  background-color: #D3D3D3;
+  height: 100px;
+  list-style-type: none;
+  border: 5px solid antiquewhite;
+  font-size: 80px;
+  font-family: sans-serif;
+  text-align: center;
+  font-weight: bold;
+  box-sizing: border-box;
+
+}
+
+
+li.tile:hover {
+  background-color: yellow;
+}
+
+#white {
+  background-color: white;
+}
+
+body h1 {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 60px;
+}
