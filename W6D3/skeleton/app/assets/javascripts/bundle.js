@@ -176,6 +176,15 @@ const APIUtil = {
       data: {query: queryVal} ,
       success: success
     });
+  },
+
+  createTweet: (data) => {
+    return $.ajax({
+      method: 'POST',
+      url: '/tweets/',
+      dataType: 'JSON',
+      data: {data: data}
+    });
   }
 };
 
