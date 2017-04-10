@@ -1,0 +1,37 @@
+const newTodos = [
+  {
+    id: 3,
+    title: "wash dog",
+    body: "with shampoo",
+    done: false
+  },
+  {
+    id: 4,
+    title: "get milk",
+    body: "chocolate only",
+    done: true
+  }
+];
+
+--creating a new object with todo id as key, and the todo as the value
+--then we are merging it with the old state
+const temp = Object.assign(newState, { [action.todo.id]: action.todo});
+--when rendering in jsx, use {} for code
+-- input should be a self closing tag
+
+
+//components can be functional or class << react.component
+//below is functional style
+const App = () => {
+  return (<h1>meow</h1>);
+};
+
+
+Questions:
+root.jsx: 6 //Why is it turning red saying unexpected token =>?
+  -linter doesnt like destructuring
+todo_actions.js: 8 //where will we be calling this action from? We are calling
+receive todo in the todo_list_component
+  --more so for backend call to grab todos for initial population
+todo_list.jsx: 9//Why do we need a todo.id key for todolist item if they are different objects
+  --they are not objects they are react components which are functions. Still need the key to differentiate them (check items on line 16)
