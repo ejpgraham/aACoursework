@@ -1,5 +1,5 @@
 import { allTodos } from './selectors.js';
-import { RECEIVE_TODOS, RECEIVE_TODO } from '../actions/todo_actions.js';
+import { RECEIVE_TODOS, RECEIVE_TODO, REMOVE_TODO } from '../actions/todo_actions.js';
 
 const _initialState = {
   1: {
@@ -21,6 +21,7 @@ const _initialState = {
 //we wont really refer to the state explicitly after tehe first call where we set initial state
 const todosReducer = (state = _initialState, action) => {
   let newState;
+
   switch(action.type) {
     case RECEIVE_TODOS: {
       newState = {};
@@ -29,13 +30,19 @@ const todosReducer = (state = _initialState, action) => {
       });
       return newState;
     }
+
+    //This time, return a new state object with only action.todo added/replaced.
     case RECEIVE_TODO: {
 
       newState = Object.assign({}, state);
       const temp = Object.assign(newState, { [action.todo.id]: action.todo});
       return temp;
     }
-      //This time, return a new state object with only action.todo added/replaced.
+    case REMOVE_TODO: {
+      newState = Object.assign({}, state);
+      delete newState[action.todo.id];
+      return newState;
+    }
     default:
       return state;
   }

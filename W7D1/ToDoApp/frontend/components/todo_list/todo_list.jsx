@@ -6,7 +6,9 @@ const TodoList = (props) => {
 
   const items = props.todos.map( (todo) => {
     return (
-      <TodoListItem key={ todo.id } todo={todo} />
+      <div>
+        <TodoListItem key={ todo.id } todo={ todo } removeTodo= { props.removeTodo }/>
+      </div>
     );
   });
 
@@ -21,3 +23,5 @@ const TodoList = (props) => {
 };
 
 export default TodoList;
+
+// <input onClick= {removeTodo(todo)} type="submit" value="Remove" />

@@ -11,10 +11,17 @@ class TodoForm extends React.Component {
     this.receiveTodo = this.props.receiveTodo.bind(this);
   }
 
-  handleChange(e) {
-    debugger
+  handleChange(type) {
 
-      // this.setState({ arg: e.currentTarget.value });
+    // const type = e.currentTarget.name;
+    // this.setState({ type: e.currentTarget.value });
+
+      // this.setState({ [e.currentTarget.name]: e.currentTarget.value });
+      //computed keys
+    return (e) => {
+      this.setState({ [type]: e.currentTarget.value });
+    };
+
 
   }
 
@@ -35,9 +42,9 @@ class TodoForm extends React.Component {
     return (
       <div>
         <h4>add todo</h4>
-        Title: <input onChange={ this.handleChange } name="title" type="text" value={ this.state.title } />
+        Title: <input onChange={ this.handleChange("title") } name="title" type="text" value={ this.state.title } />
         <br />
-        Body: <input onChange={ this.handleChange } name="body" type="text" value={ this.state.body } />
+        Body: <input onChange={ this.handleChange("body") } name="body" type="text" value={ this.state.body } />
         <br />
         <input onClick= { this.handleSubmit } type="submit" value="+ todo" />
       </div>

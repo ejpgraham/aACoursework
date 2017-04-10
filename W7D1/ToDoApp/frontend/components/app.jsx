@@ -7,8 +7,8 @@ import TodoListContainer from './todo_list/todo_list_container.jsx';
 //components can be functional or class << react.component
 const App = () => {
   return (
-    <div>
-      <h1>app meow</h1>
+    <div id="app">
+      <h1>To-Dos</h1>
       <TodoListContainer />
     </div>
   );
