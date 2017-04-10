@@ -35,3 +35,7 @@ receive todo in the todo_list_component
   --more so for backend call to grab todos for initial population
 todo_list.jsx: 9//Why do we need a todo.id key for todolist item if they are different objects
   --they are not objects they are react components which are functions. Still need the key to differentiate them (check items on line 16)
+
+Todos:
+--finish on submit button
+--finish action for removing a todo
