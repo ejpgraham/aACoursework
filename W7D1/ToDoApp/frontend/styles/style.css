@@ -51,6 +51,13 @@ button:hover, input.submit {
 input{
   margin-right: 5px;
 }
+h1 {
+  text-align: center;
+}
+
+h4{
+  margin: 2px 0px;
+}
 
 label {
   font-size: 14px;

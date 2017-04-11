@@ -8,7 +8,7 @@ import TodoListContainer from './todo_list/todo_list_container.jsx';
 const App = () => {
   return (
     <div id="app">
-      <h1>To-Dos</h1>
+      <h1>My To-Dos</h1>
       <TodoListContainer />
     </div>
   );
