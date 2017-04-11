@@ -7,7 +7,11 @@ class TodoListItem extends React.Component {
   }
   render(){
     return (<li className="todo-item">
-      <h4 onClick={ this.toggleShow.bind(this) }>{ this.props.todo.title } </h4>
+      <div className = "todo-toggler" onClick={ this.toggleShow.bind(this) }>
+
+         <h4>{ this.state.hidden ? '+' : '-'} { this.props.todo.title } </h4>
+      </div>
+
       <div className = { this.state.hidden ? 'hidden' : 'details'}>
       { this.props.todo.body }
       <br />
