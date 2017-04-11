@@ -25,6 +25,11 @@ const temp = Object.assign(newState, { [action.todo.id]: action.todo});
 return a json obj
 --- Api::TodosController
 
+--in application.html.erb
+<%= stylesheet_link_tag    'application', media: 'all' %>
+<%= javascript_include_tag 'application' %>
+This code gathers up all of your js in the app/assets folder and the css in the stylesheets folder and then runs them all. This is why you should have your bundle.js put into the assets folder.
+
 //components can be functional or class << react.component
 //below is functional style
 const App = () => {
