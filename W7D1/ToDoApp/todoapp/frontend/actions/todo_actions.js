@@ -29,7 +29,15 @@ export const removeTodo = (todo) => {
   };
 };
 
+export const fetchTodos = () => (dispatch) => {
+  //if fetchTodos is called, fire ajax call
+  //resulting promise can be chained with a then which takes the response and receives it
+
+  return getAllTodos().then((response) => dispatch(receiveTodos(response)));
+};
+
 
 // QUESTION: this is how we test since we have no views to call from
 // window.receiveTodo = receiveTodo;
 // window.receiveTodos = receiveTodos;
+window.fetchTodos = fetchTodos;

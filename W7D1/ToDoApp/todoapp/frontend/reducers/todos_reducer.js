@@ -21,7 +21,6 @@ const _initialState = {
 //we wont really refer to the state explicitly after tehe first call where we set initial state
 const todosReducer = (state = _initialState, action) => {
   let newState;
-
   switch(action.type) {
     case RECEIVE_TODOS: {
       newState = {};

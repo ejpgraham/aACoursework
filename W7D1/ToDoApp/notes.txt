@@ -36,6 +36,14 @@ const App = () => {
   return (<h1>meow</h1>);
 };
 
+export const fetchTodos = () => (dispatch) => {
+  //if fetchTodos is called, fire ajax call
+  //resulting promise can be chained with a then which takes the response and receives it
+
+  return getAllTodos().then((response) => dispatch(receiveTodos(response)));
+};
+
+
 
 Questions:
 root.jsx: 6 //Why is it turning red saying unexpected token =>?
@@ -46,6 +54,8 @@ receive todo in the todo_list_component
 todo_list.jsx: 9//Why do we need a todo.id key for todolist item if they are different objects
   --they are not objects they are react components which are functions. Still need the key to differentiate them (check items on line 16)
 thunk.js //why are we creating our own thunk if usually we just import it?
+todo_actions.js: 32// Why are we passing in the dispatch? Is this actually a function that is being returned
+  //dispatch is used to dispatch an action at the end after the api response is received
 
 Todos:
 --finish on submit button
