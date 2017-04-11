@@ -18,7 +18,8 @@ const newTodos = [
 const temp = Object.assign(newState, { [action.todo.id]: action.todo});
 --when rendering in jsx, use {} for code
 -- input should be a self closing tag
-
+-- handle submit is on the FORM!!!, not on the last input type submit
+<form onSubmit= { this.handleSubmit } >
 
 //components can be functional or class << react.component
 //below is functional style
