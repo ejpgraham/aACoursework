@@ -29,13 +29,13 @@ class TodoForm extends React.Component {
     e.preventDefault();
 
     let newItem = {
-      id: uniqueID(),
+      // id: uniqueID(),
       title: this.state.title,
-      body: this.state.body
+      body: this.state.body,
+      done: false
     };
-    debugger;
-    this.createTodo(newItem);
-    this.setState({ title: "", body: "" });
+    this.createTodo(newItem).then(() => this.setState({ title: "", body: "" }));
+
   }
 
   render(){

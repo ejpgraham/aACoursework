@@ -6,7 +6,6 @@ export const getAllTodos = function(){
 };
 
 export const addTodo = function(todo){
-  debugger;
   return $.ajax({
      type: 'POST',
      url: "/api/todos",
