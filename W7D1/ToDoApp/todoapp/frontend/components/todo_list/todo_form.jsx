@@ -8,7 +8,7 @@ class TodoForm extends React.Component {
     this.state = {title: "", body: ""};
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.receiveTodo = this.props.receiveTodo.bind(this);
+    this.createTodo = this.props.createTodo.bind(this);
   }
 
   handleChange(type) {
@@ -33,8 +33,8 @@ class TodoForm extends React.Component {
       title: this.state.title,
       body: this.state.body
     };
-
-    this.receiveTodo(newItem);
+    debugger;
+    this.createTodo(newItem);
     this.setState({ title: "", body: "" });
   }
 

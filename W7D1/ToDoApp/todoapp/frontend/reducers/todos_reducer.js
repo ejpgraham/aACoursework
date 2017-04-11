@@ -2,18 +2,18 @@ import { allTodos } from './selectors.js';
 import { RECEIVE_TODOS, RECEIVE_TODO, REMOVE_TODO } from '../actions/todo_actions.js';
 
 const _initialState = {
-  1: {
-    id: 1,
-    title: "wash car",
-    body: "with soap",
-    done: false
-  },
-  2: {
-    id: 2,
-    title: "wash dog",
-    body: "with shampoo",
-    done: true
-  },
+  // 1: {
+  //   id: 1,
+  //   title: "wash car",
+  //   body: "with soap",
+  //   done: false
+  // },
+  // 2: {
+  //   id: 2,
+  //   title: "wash dog",
+  //   body: "with shampoo",
+  //   done: true
+  // },
 };
 
 // QUESTION: looping through the todos, how do we know what data type comes in?

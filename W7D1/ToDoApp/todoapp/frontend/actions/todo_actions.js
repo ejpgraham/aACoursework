@@ -1,4 +1,4 @@
-import { getAllTodos } from '../util/todo_api_util';
+import { getAllTodos, addTodo } from '../util/todo_api_util';
 
 export const RECEIVE_TODOS = "RECEIVE_TODOS";
 export const RECEIVE_TODO = "RECEIVE_TODO";
@@ -34,6 +34,10 @@ export const fetchTodos = () => (dispatch) => {
   //resulting promise can be chained with a then which takes the response and receives it
 
   return getAllTodos().then((response) => dispatch(receiveTodos(response)));
+};
+
+export const createTodo = (todo) => (dispatch) => {
+  return addTodo(todo).then((response) => dispatch(receiveTodo(response)));
 };
 
 
