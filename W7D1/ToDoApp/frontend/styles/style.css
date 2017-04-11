@@ -1,9 +1,57 @@
 body {
-  background-color: lightblue;
-  
+  background-color: #cce0da;
+  font-family: sans-serif;
 }
 
 #app{
   width: 400px;
   margin: 0 auto;
+}
+
+
+.todo-item {
+  background-color: white;
+  list-style-type: none;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.list {
+  margin: 0px;
+  padding: 0;
+}
+
+header{
+  background-color: #cf0626;
+  height: 40px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+button, input.submit {
+  background-color: #2c7bb5;
+  color: white;
+  border: none;
+  padding: 5px;
+  display: inline-block;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 4px 0 rgba(0,0,0,0.19);
+  text-align: center;
+  text-decoration: none;
+}
+
+button:hover, input.submit {
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 8px 25px 0 rgba(0,0,0,0.19);
+}
+
+input{
+  margin-right: 5px;
+}
+
+label {
+  font-size: 14px;
 }

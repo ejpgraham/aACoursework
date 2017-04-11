@@ -2,7 +2,7 @@ import React from 'react';
 
 class TodoListItem extends React.Component {
   render(){
-    return (<li>
+    return (<li className="todo-item">
       { this.props.todo.title } - { this.props.todo.body }
       <button> remove </button>
     </li>);

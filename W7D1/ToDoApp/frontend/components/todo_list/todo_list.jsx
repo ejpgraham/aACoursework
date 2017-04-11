@@ -14,10 +14,11 @@ const TodoList = (props) => {
 
   return (
     <div>
-      <ul>
+      <TodoForm receiveTodo={ props.receiveTodo }/>
+      <hr />
+      <ul className="list">
         { items }
       </ul>
-      <TodoForm receiveTodo={ props.receiveTodo }/>
     </div>
   );
 };
