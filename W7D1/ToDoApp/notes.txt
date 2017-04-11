@@ -21,6 +21,10 @@ const temp = Object.assign(newState, { [action.todo.id]: action.todo});
 -- handle submit is on the FORM!!!, not on the last input type submit
 <form onSubmit= { this.handleSubmit } >
 
+-- namespace :api, defaults: {format: :json} use this in routes to make the default
+return a json obj
+--- Api::TodosController
+
 //components can be functional or class << react.component
 //below is functional style
 const App = () => {
@@ -40,3 +44,5 @@ todo_list.jsx: 9//Why do we need a todo.id key for todolist item if they are dif
 Todos:
 --finish on submit button
 --finish action for removing a todo
+--make a todo detail view
+--done and undo buttons
