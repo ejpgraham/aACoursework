@@ -16,7 +16,7 @@ body {
   padding: 5px;
   border-radius: 5px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
 
@@ -68,4 +68,13 @@ form{
   border: 1px solid #F7F7F7;
   border-radius: 5px;
   margin-bottom: 15px;
+}
+
+.hidden{
+  display: none;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
 }
