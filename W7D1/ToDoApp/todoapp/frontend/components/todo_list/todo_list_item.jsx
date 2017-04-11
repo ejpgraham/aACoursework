@@ -8,10 +8,8 @@ class TodoListItem extends React.Component {
   render(){
     return (<li className="todo-item">
       <div className = "todo-toggler" onClick={ this.toggleShow.bind(this) }>
-
          <h4>{ this.state.hidden ? '+' : '-'} { this.props.todo.title } </h4>
       </div>
-
       <div className = { this.state.hidden ? 'hidden' : 'details'}>
       { this.props.todo.body }
       <br />
@@ -21,7 +19,7 @@ class TodoListItem extends React.Component {
   }
 
   handleRemoval(){
-    this.props.removeTodo(this.props.todo);
+    this.props.destroyTodo(this.props.todo);
   }
 
   toggleShow(){

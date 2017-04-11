@@ -36,6 +36,8 @@ const App = () => {
   return (<h1>meow</h1>);
 };
 
+////connect is doing the subscribing to changes
+
 export const fetchTodos = () => (dispatch) => {
   //if fetchTodos is called, fire ajax call
   //resulting promise can be chained with a then which takes the response and receives it

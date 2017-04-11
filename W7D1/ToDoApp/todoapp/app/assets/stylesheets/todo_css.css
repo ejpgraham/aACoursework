@@ -1,6 +1,11 @@
 body {
   background-color: #cce0da;
   font-family: sans-serif;
+  background-image:url("http://2.bp.blogspot.com/-cuOkfgs9ufE/TkdjLaZxmMI/AAAAAAAADA0/9zk8a0ffFtA/s1600/landscape+wallpapaerss.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 #app{
@@ -46,6 +51,7 @@ button, input.submit {
 
 button:hover, input.submit:hover {
   box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 8px 25px 0 rgba(0,0,0,0.19);
+  cursor: pointer;
 }
 
 input{
@@ -60,7 +66,8 @@ h4{
 }
 
 label {
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 form{
@@ -68,6 +75,7 @@ form{
   border: 1px solid #F7F7F7;
   border-radius: 5px;
   margin-bottom: 15px;
+  background-color:rgba(255, 255, 255, 0.5);
 }
 
 .hidden{
@@ -77,4 +85,26 @@ form{
 .details {
   display: flex;
   flex-direction: column;
+}
+
+
+.todo-toggler:hover{
+  cursor: pointer;
+}
+
+
+.errors {
+  color: blue;
+  list-style-type: none;
+  padding: 0px 5px;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.error::before{
+  content: "* ";
+}
+
+.error{
+  margin-top: 2px;
 }

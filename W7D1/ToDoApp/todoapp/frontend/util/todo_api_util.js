@@ -12,3 +12,10 @@ export const addTodo = function(todo){
      data: {todo: todo}
   });
 };
+
+export const deleteTodo = function(todo){
+  return $.ajax({
+     type: 'DELETE',
+     url: `/api/todos/${todo.id}`
+  });
+};

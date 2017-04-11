@@ -39,16 +39,24 @@ class TodoForm extends React.Component {
   }
 
   render(){
+    let errors = this.props.errors;
     return (
-      <form onSubmit= { this.handleSubmit } >
+      <form onSubmit= { this.handleSubmit }>
         <h4>Add Todo</h4>
         <label>Title: </label>
         <input onChange={ this.handleChange("title") } name="title" type="text" value={ this.state.title } />
         <label>Body: </label>
         <input onChange={ this.handleChange("body") } name="body" type="text" value={ this.state.body } />
-
         <input type="submit" value="+ todo" className="submit" />
+          <ul className="errors">
+            {errors.map((error) => {
+              return (
+                <li className="error" key={ error }>{ error }</li>
+              );
+            })}
+          </ul>
       </form>
+
     );
   }
 }
