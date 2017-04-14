@@ -1,0 +1,3 @@
+Quesitons:
+1. what is main for in root.html.erb
+2. what is base on session/create/render render json: { base: ["Invalid username/password"] }, status: 422
